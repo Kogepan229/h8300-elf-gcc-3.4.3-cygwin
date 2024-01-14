@@ -24,10 +24,6 @@ jobs:
         run: |
           echo '::set-env name=PATH::C:\tools\cygwin\bin;C:\tools\cygwin\usr\bin'
 
-      - name: Test check /usr/local
-        run: |
-          bash -c "ls /usr/local/bin | ls /usr/local/etc | ls /usr/local/lib"
-
       - name: Init /usr/local
         run: |
           sh ./scripts/init-local.sh
