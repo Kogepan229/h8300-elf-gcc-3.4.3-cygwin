@@ -24,13 +24,9 @@ jobs:
         run: |
           echo '::set-env name=PATH::C:\tools\cygwin\bin;C:\tools\cygwin\usr\bin'
 
-      - name: Test check wget
+      - name: Test check /usr/local
         run: |
-          echo $PATH
-          echo $GITHUB_PATH
-          ls C:\tools\cygwin\bin
-          ls C:\tools\cygwin\package
-          wget.exe --version
+          ls /usr/local
 
       - name: Init /usr/local
         run: |
