@@ -1,0 +1,39 @@
+name: build
+on: push
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Install cygwin base packages with chocolatey
+        run: |
+          choco install --no-progress cygwin
+
+      - name: Install cygwin additional packages
+        run: |
+          C:\tools\cygwin\cygwinsetup.exe -qgnNdO -R C:/tools/cygwin -l C:/tools/cygwin/package -s http://mirrors.kernel.org/sourceware/cygwin/ -P wget
+        shell: cmd
+
+      - name: Set ENV
+        run: |
+          echo '::set-env name=PATH::C:\tools\cygwin\bin;C:\tools\cygwin\usr\bin'
+
+      - name: Init /usr/local
+        run: |
+          sh ./scripts/init-local.sh
+
+      - name: Download sources
+        run: |
+          sh ./scripts/download.sh
+
+      - name: Build binutils
+        run: |
+          sh ./scripts/build-binutils-2.15.sh
+
+      - name: Build gcc
+        run: |
+          sh ./scripts/build-gcc.sh
+
+      - name: Build newlib
+        run: |
+          sh ./scripts/build-newlib.sh
