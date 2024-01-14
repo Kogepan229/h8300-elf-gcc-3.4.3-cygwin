@@ -23,7 +23,6 @@ jobs:
 
       - name: Test check wget
         run: |
-          wget --version
           echo $PATH
           ls -ls C:\tools\cygwin\bin
           ls -ls C:\tools\cygwin\usr\bin
