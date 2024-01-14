@@ -5,6 +5,9 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Install cygwin base packages with chocolatey
         run: |
           choco install --no-progress cygwin
