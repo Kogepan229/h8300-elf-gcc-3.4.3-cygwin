@@ -21,6 +21,13 @@ jobs:
         run: |
           echo 'PATH=C:\tools\cygwin\bin;C:\tools\cygwin\usr\bin' >> $GITHUB_ENV
 
+      - name: Test check wget
+        run: |
+          wget --version
+          echo $PATH
+          ls -ls C:\tools\cygwin\bin
+          ls -ls C:\tools\cygwin\usr\bin
+
       - name: Init /usr/local
         run: |
           sh ./scripts/init-local.sh
