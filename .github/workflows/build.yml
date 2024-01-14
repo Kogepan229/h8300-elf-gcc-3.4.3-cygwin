@@ -24,9 +24,9 @@ jobs:
       - name: Test check wget
         run: |
           echo $PATH
-          ls -la C:\tools\cygwin\bin
-          ls -la C:\tools\cygwin\usr\bin
-          ls -la C:\tools\cygwin\package
+          ls C:\tools\cygwin\bin
+          ls C:\tools\cygwin\usr\bin
+          ls C:\tools\cygwin\package
 
       - name: Init /usr/local
         run: |
