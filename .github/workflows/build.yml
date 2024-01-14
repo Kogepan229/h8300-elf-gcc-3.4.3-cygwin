@@ -26,9 +26,7 @@ jobs:
 
       - name: Test check /usr/local
         run: |
-          bash -c "ls /usr/local/bin"
-          bash -c "ls /usr/local/etc"
-          bash -c "ls /usr/local/lib"
+          bash -c "ls /usr/local/bin | ls /usr/local/etc | ls /usr/local/lib"
 
       - name: Init /usr/local
         run: |
