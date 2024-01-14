@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ls /
 ls /usr
 ls /usr/local
