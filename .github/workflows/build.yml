@@ -8,6 +8,10 @@ jobs:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
     steps:
+      - name: Set git config
+        run: |
+          git config --global core.autocrlf input
+
       - name: Checkout
         uses: actions/checkout@v4
 
